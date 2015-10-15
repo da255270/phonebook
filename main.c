@@ -7,7 +7,7 @@
 #include IMPL
 
 #define DICT_FILE "./dictionary/words.txt"
-
+#define INPUT_SIZE 8
 static double diff_in_second(struct timespec t1, struct timespec t2)
 {
     struct timespec diff;
@@ -68,7 +68,9 @@ int main(int argc, char *argv[])
     lne = pHead;
     start = clock();
     for(j = 0; j < INPUT_SIZE; j++){
-        findName(input[j], ht);
+      assert(findName(input[j], ht) && "Did you implement findName() in " IMPL "?");
+      assert(0 == strcmp(findName(input[j],ht)->lastName,input[j]));
+      printf("%12s is found!\n",input[j]);
         lne = pHead;
     }
     end = clock();
