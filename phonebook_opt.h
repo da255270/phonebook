@@ -30,7 +30,9 @@ typedef struct __PHONE_BOOK_HASH_TABLE {
 hashTable *createHashTable(int tableSize);
 lastNameEntry* findName(char *key, hashTable *ht);
 int appendHash(char *key, hashTable *ht);
-int hash(char *key)
+int hash1(char *key,hashTable *ht);
+int hash2(char *key);
+
 
 
 
